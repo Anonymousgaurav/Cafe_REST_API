@@ -25,9 +25,9 @@ items = [
 
 @app.get('/get-item')
 def get_item():
-    name = request.args.get('name')
+    query = request.args.get('name')
     for item in items:
-        if name == item['name']:
+        if query == item['name']:
             return item
     return {"message": "Item not found"}
 
